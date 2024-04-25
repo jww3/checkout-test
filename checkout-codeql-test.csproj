@@ -11,6 +11,12 @@
     <EmbedAllSources>true</EmbedAllSources>
     <EnableSourceLink>true</EnableSourceLink>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Configuration>Release</Configuration>
   </PropertyGroup>
+
+  <Target Name="PrintGitConfigVersions" BeforeTargets="Build">
+    <Exec Command="echo core.repositoryformatversion:" ConsoleToMSBuild="true" />
+    <Exec Command="git config --local core.repositoryformatversion" ConsoleToMSBuild="true" />
+  </Target>
 
 </Project>
