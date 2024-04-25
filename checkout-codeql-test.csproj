@@ -10,6 +10,7 @@
     <PackageProjectUrl>https://github.com/hicksjacobp/checkout-codeql-test</PackageProjectUrl>
     <EmbedAllSources>true</EmbedAllSources>
     <EnableSourceLink>true</EnableSourceLink>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
