@@ -8,10 +8,8 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageId>Checkout.CodeQL.Test</PackageId>
     <PackageProjectUrl>https://github.com/hicksjacobp/checkout-codeql-test</PackageProjectUrl>
-    <RepositoryUrl>$(GIT_URL)</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryBranch>main</RepositoryBranch>
-    <RepositoryCommit>$(GIT_COMMIT)</RepositoryCommit>
+    <EmbedAllSources>true</EmbedAllSources>
+    <EnableSourceLink>true</EnableSourceLink>
   </PropertyGroup>
 
   <ItemGroup>
