@@ -8,6 +8,8 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageId>Checkout.CodeQL.Test</PackageId>
+    <PackageProjectUrl>https://github.com/hicksjacobp/checkout-codeql-test</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
