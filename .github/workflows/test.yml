@@ -1,0 +1,53 @@
+name: "Test for actions/checkout@v4.1.4"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test1:
+    name: "ubuntu-latest + actions/checkout@v4.1.4"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.4
+        with:
+          sparse-checkout-cone-mode: true
+          fetch-depth: 1
+          fetch-tags: false
+      - name: "Print .git/config"
+        run: cat .git/config
+      - name: "dotnet build"
+        run: dotnet build
+  test2:
+    name: "actions/runner:2.316.0 + actions/checkout@v4.1.4"
+    runs-on: ubuntu-latest
+    container: ghcr.io/actions/actions-runner:2.316.0
+    steps:
+      - uses: actions/checkout@v4.1.4
+        with:
+          sparse-checkout-cone-mode: true
+          fetch-depth: 1
+          fetch-tags: false
+      - name: "Print .git/config"
+        run: cat .git/config
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.204'
+      - name: "dotnet build"
+        run: dotnet build
+  test3:
+    name: "actions/runner:2.316.0 + actions/checkout@v4.1.1"
+    runs-on: ubuntu-latest
+    container: ghcr.io/actions/actions-runner:2.316.0
+    steps:
+      - uses: actions/checkout@v4.1.1
+        with:
+          sparse-checkout-cone-mode: true
+          fetch-depth: 1
+          fetch-tags: false
+      - name: "Print .git/config"
+        run: cat .git/config
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.204'
+      - name: "dotnet build"
+        run: dotnet build
