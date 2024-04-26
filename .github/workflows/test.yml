@@ -26,8 +26,6 @@ jobs:
       image: ghcr.io/actions/actions-runner:2.316.0
       options: --user 0
     steps:
-      - name: "Print git --version"
-        run: git --version
       - name: "Update git"
         run: |
           add-apt-repository ppa:git-core/ppa -y
@@ -54,8 +52,6 @@ jobs:
       image: ghcr.io/actions/actions-runner:2.316.0
       options: --user 0
     steps:
-      - name: "Print git --version"
-        run: git --version
       - name: "Update git"
         run: |
           add-apt-repository ppa:git-core/ppa -y
