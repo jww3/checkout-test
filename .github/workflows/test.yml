@@ -13,6 +13,8 @@ jobs:
           sparse-checkout-cone-mode: true
           fetch-depth: 1
           fetch-tags: false
+      - name: "Print git --version"
+        run: git --version
       - name: "Print .git/config"
         run: cat .git/config
       - name: "dotnet build"
@@ -20,13 +22,24 @@ jobs:
   test2:
     name: "actions/runner:2.316.0 + actions/checkout@v4.1.4"
     runs-on: ubuntu-latest
-    container: ghcr.io/actions/actions-runner:2.316.0
+    container:
+      image: ghcr.io/actions/actions-runner:2.316.0
+      options: --user 0
     steps:
+      - name: "Print git --version"
+        run: git --version
+      - name: "Update git"
+        run: |
+          add-apt-repository ppa:git-core/ppa -y
+          apt-get update
+          apt-get install git -y
       - uses: actions/checkout@v4.1.4
         with:
           sparse-checkout-cone-mode: true
           fetch-depth: 1
           fetch-tags: false
+      - name: "Print git --version"
+        run: git --version
       - name: "Print .git/config"
         run: cat .git/config
       - uses: actions/setup-dotnet@v4
@@ -37,13 +50,24 @@ jobs:
   test3:
     name: "actions/runner:2.316.0 + actions/checkout@v4.1.1"
     runs-on: ubuntu-latest
-    container: ghcr.io/actions/actions-runner:2.316.0
+    container:
+      image: ghcr.io/actions/actions-runner:2.316.0
+      options: --user 0
     steps:
+      - name: "Print git --version"
+        run: git --version
+      - name: "Update git"
+        run: |
+          add-apt-repository ppa:git-core/ppa -y
+          apt-get update
+          apt-get install git -y
       - uses: actions/checkout@v4.1.1
         with:
           sparse-checkout-cone-mode: true
           fetch-depth: 1
           fetch-tags: false
+      - name: "Print git --version"
+        run: git --version
       - name: "Print .git/config"
         run: cat .git/config
       - uses: actions/setup-dotnet@v4
