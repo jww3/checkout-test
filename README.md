@@ -6,9 +6,9 @@ The difference between `actions/checkout@v4.1.4` and `actions/checkout@v4.1.1` i
 
 | `actions/checkout` | `git` | `repositoryformatversion` | Test |
 |--------------------|-------|---------------------------| ---- |
-| `v4.1.1`           | `2.34.1` | `0` | :heavy_check_mark: <https://github.com/hicksjacobp/checkout-codeql-test/actions/runs/8842167272/job/24280382043> |
-| `v4.1.4`           | `2.34.1` | `1` | :x: <https://github.com/hicksjacobp/checkout-codeql-test/actions/runs/8842167272/job/24280382240> |
-| `v4.1.4`           | `2.43.2` | `0` | :heavy_check_mark: <https://github.com/hicksjacobp/checkout-codeql-test/actions/runs/8842167272/job/24280382420> |
+| `v4.1.1`           | `2.34.1` | `0` | :heavy_check_mark: <https://github.com/hicksjacobp/checkout-test/actions/runs/8848651950/job/24298891141> |
+| `v4.1.4`           | `2.34.1` | `1` | :x: <https://github.com/hicksjacobp/checkout-test/actions/runs/8848651950/job/24298890845> |
+| `v4.1.4`           | `2.43.2` | `0` | :heavy_check_mark: <https://github.com/hicksjacobp/checkout-test/actions/runs/8848651950/job/24298890623> |
 
 The scenario of `actions/checkout@v4.1.4` and `git@2.34.1` is what has caused us unforeseen pain.
 This scenario is exacerbated by the fact that `actions/runner@v3.16.0` comes with `git@2.34.1` and the default CodeQL workflow uses `actions/checkout@v4` (and therefore resolves to `actions/checkout@v4.1.4` as of the time of writing).
