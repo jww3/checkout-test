@@ -6,17 +6,15 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageId>Checkout.CodeQL.Test</PackageId>
     <PackageProjectUrl>https://github.com/hicksjacobp/checkout-codeql-test</PackageProjectUrl>
-    <EmbedAllSources>true</EmbedAllSources>
     <EnableSourceLink>true</EnableSourceLink>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Configuration>Release</Configuration>
   </PropertyGroup>
 
-  <Target Name="PrintGitConfigVersions" BeforeTargets="Build">
-    <Exec Command="echo core.repositoryformatversion:" ConsoleToMSBuild="true" />
-    <Exec Command="git config --local core.repositoryformatversion" ConsoleToMSBuild="true" />
-  </Target>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
 
 </Project>
