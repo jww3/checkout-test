@@ -28,11 +28,9 @@ jobs:
     steps:
       - name: "Update git"
         run: |
-          apt update -y
-          apt install -y software-properties-common
-          add-apt-repository ppa:git-core/ppa -y
           apt-get update
           apt-get install git -y
+          apt-get install curl -y
       - uses: actions/checkout@v4.1.4
         with:
           sparse-checkout-cone-mode: true
@@ -56,11 +54,9 @@ jobs:
     steps:
       - name: "Update git"
         run: |
-          apt update -y
-          apt install -y software-properties-common
-          add-apt-repository ppa:git-core/ppa -y
           apt-get update
           apt-get install git -y
+          apt-get install curl -y
       - uses: actions/checkout@v4.1.1
         with:
           sparse-checkout-cone-mode: true
