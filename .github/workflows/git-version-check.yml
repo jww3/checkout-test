@@ -38,7 +38,7 @@ jobs:
       #     fetch-tags: false
       - name: "Print git --version"
         run: |
-          which git
+          which git || true
           git --version || true
       # - name: "Print .git/config"
       #   run: cat .git/config
