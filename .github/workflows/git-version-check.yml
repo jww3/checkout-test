@@ -1,0 +1,50 @@
+name: "Git Version Check"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test1:
+    name: "Check Git Version on ubuntu-latest"
+    runs-on: ubuntu-latest
+    steps:
+      # - uses: actions/checkout@v4.1.4
+      #   with:
+      #     sparse-checkout-cone-mode: true
+      #     fetch-depth: 1
+      #     fetch-tags: false
+      - name: "Print git --version"
+        run: git --version
+      # - name: "Print .git/config"
+      #   run: cat .git/config
+      # - name: "dotnet build"
+      #   run: dotnet build
+  test2:
+    name: "Check Git Version on actions/runner:2.316.0"
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/actions/actions-runner:2.316.0
+      options: --user 0
+    steps:
+      # - name: "Update git"
+      #   run: |
+      #     apt-get update
+      #     apt-get install git -y
+      #     apt-get install curl -y
+      # - uses: actions/checkout@v4.1.4
+      #   with:
+      #     sparse-checkout-cone-mode: true
+      #     fetch-depth: 1
+      #     fetch-tags: false
+      - name: "Print git --version"
+        run: |
+          which git
+          git --version || true
+      # - name: "Print .git/config"
+      #   run: cat .git/config
+      # - uses: actions/setup-dotnet@v4
+      #   with:
+      #     dotnet-version: '8.0.204'
+      # - name: "dotnet build"
+      #   run: dotnet build
+  
