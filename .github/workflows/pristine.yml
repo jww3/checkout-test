@@ -19,6 +19,7 @@ jobs:
         run: |
           apt-get update
           apt-get install gh -y
+          apt show gh
       - name: "Print git --version"
         run: |
           which git || echo "::warning::git does not appear to be installed" 
