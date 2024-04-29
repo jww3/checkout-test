@@ -1,0 +1,30 @@
+name: "Git Version Check"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  pristine-install:
+    name: "Install GH CLI on a Pristine Container"
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:latest
+      options: --user 0
+    steps:
+      - name: "Print git --version"
+        run: |
+          which git || echo "::warning::git does not appear to be installed" 
+          git --version || echo "::warning::could not determine installed version of git"
+      - name: "Install GH CLI"
+        run: |
+          apt-get update
+          apt-get install gh -y
+      - name: "Print git --version"
+        run: |
+          which git || echo "::warning::git does not appear to be installed" 
+          git --version || echo "::warning::could not determine installed version of git"
+      # - name: "Print .git/config"
+      #   run: cat .git/config
+  
+    
+
