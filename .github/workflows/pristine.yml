@@ -1,4 +1,4 @@
-name: "Git Version Check"
+name: "Install GH CLI"
 
 on:
   workflow_dispatch:
