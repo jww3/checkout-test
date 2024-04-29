@@ -38,8 +38,8 @@ jobs:
       #     fetch-tags: false
       - name: "Print git --version"
         run: |
-          which git || true
-          git --version || true
+          which git || echo "::warning::git does not appear to be installed" 
+          git --version || echo "::warning::could not determine installed version of git"
       # - name: "Print .git/config"
       #   run: cat .git/config
       # - uses: actions/setup-dotnet@v4
