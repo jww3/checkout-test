@@ -8,7 +8,7 @@ jobs:
     name: "Install GH CLI on a Pristine Container"
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:latest
+      image: ubuntu:jammy
       options: --user 0
     steps:
       - name: "Print git --version"
