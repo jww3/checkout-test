@@ -18,7 +18,7 @@ jobs:
       - name: "Update apt"
         run: |
           apt update
-          apt-get install software-properties-common
+          apt-get install software-properties-common -y
           add-apt-repository ppa:git-core/ppa
           # apt-get install wget -y
           apt update
