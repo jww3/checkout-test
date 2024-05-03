@@ -17,8 +17,10 @@ jobs:
           git --version || echo "::warning::could not determine installed version of git"
       - name: "Update apt"
         run: |
+          apt update
           apt-get install software-properties-common
           add-apt-repository ppa:git-core/ppa
+          # apt-get install wget -y
           apt update
       - name: "Install GH CLI"
         run: |
