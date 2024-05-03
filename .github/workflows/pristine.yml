@@ -15,9 +15,10 @@ jobs:
         run: |
           which git || echo "::warning::git does not appear to be installed" 
           git --version || echo "::warning::could not determine installed version of git"
-      - name: "Update apt"
+      - name: "Configure apt"
         run: |
           apt update
+          apt-get install wget -y          
           apt-get install software-properties-common -y
           add-apt-repository ppa:git-core/ppa
           apt update
